@@ -2,13 +2,22 @@
 
 <h1>Posts</h1>
 
-<div id="posts">
-  <% @posts.each do |post| %>
-    <%= render post %>
-    <p>
-      <%= link_to "Show this post", post %>
-    </p>
-  <% end %>
-</div>
+<% if @posts.present? %>
+  <table class="table" id="posts">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>body</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @posts.each do |post| %>
+        <%= render post %>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <div>empty</div>
+<% end %>
 
 <%= link_to "New post", new_post_path %>

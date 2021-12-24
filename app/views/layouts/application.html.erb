@@ -11,6 +11,18 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="navbar">
+      <div class="container-fluid">
+        <a href="<%= root_path %>" class="navbar-brand">HotwireRailsSample</a>
+        <div>
+          <ul class="navbar-nav">
+            <li class="nav-item"><a href="<%= posts_path %>" class="nav-link">Posts</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container my-md-4">
+      <%= yield %>
+    </div>
   </body>
 </html>

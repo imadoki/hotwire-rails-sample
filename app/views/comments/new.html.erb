@@ -1,0 +1,13 @@
+<h1>New Comment</h1>
+
+<%= form_with(model: [@comment.message, @comment]) do |form| %>
+  <div>
+    <%= form.label :content, style: "display: block" %>
+    <%= form.text_field :content %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'back', @comment.message %>

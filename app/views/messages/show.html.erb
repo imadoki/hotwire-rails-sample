@@ -11,8 +11,4 @@
   <%= button_to "Destroy this message", @message, method: :delete %>
 </div>
 
-<div id="comments">
-  <%= render @message.comments %>
-</div>
-
-<%= link_to "New Comment", new_message_comment_path(@message) %>
+<%= turbo_frame_tag 'comments', src: message_comments_path(@message) %>

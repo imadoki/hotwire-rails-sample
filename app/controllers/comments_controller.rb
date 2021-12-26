@@ -1,5 +1,8 @@
 class CommentsController < ApplicationController
-  before_action :set_message, only: %i[ new create ]
+  before_action :set_message, only: %i[ index new create ]
+
+  def index
+  end
 
   def new
     @comment = @message.comments.new
@@ -7,7 +10,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = @message.comments.create!(comment_params)
-    redirect_to @message
+    redirect_to message_comments_path(@message)
   end
 
   private

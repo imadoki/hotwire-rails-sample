@@ -1,0 +1,8 @@
+<h1>Comments</h1>
+
+<%= turbo_frame_tag 'comments' do %>
+  <div id="comments">
+    <%= render @message.comments %>
+    <%= link_to "New Comment", new_message_comment_path(@message) %>
+  </div>
+<% end %>
